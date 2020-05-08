@@ -1,0 +1,33 @@
+.container { 
+    position: relative;
+    padding: 3rem;
+    width:100%;
+}
+
+.hold-info img{
+    max-height: 500px;
+    width: auto;
+    max-width:100%;
+    position: relative;
+}
+
+.hold-info h3{
+    width: 100%;
+    position: relative;
+}
+
+.hold-info h1{
+    width: 100%;
+    position: relative;
+}
+
+
+.hold-info {
+   text-align: center;
+}
+
+.set-slider {
+    height: 200px;
+    background-color: aqua;
+    position: absolute;
+}

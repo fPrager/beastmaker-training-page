@@ -1,0 +1,11 @@
+{
+    "extends": "airbnb-base",
+    "ignorePatterns": ["node_modules/"],
+    "globals": {
+        "document": true
+    },
+    "rules": {
+      "import/no-cycle": "off",
+      "indent":[2 ,4]
+    }
+}
