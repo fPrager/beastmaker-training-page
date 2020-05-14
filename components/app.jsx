@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Row, Col } from 'antd';
+import { Row, Col, Page } from '@zeit-ui/react'
+import Exercise from './Exercise';
+
 
 import sampleTrainingData from '../data/sample-training-data';
-import getStagesFromTraining from '../timeline/get-stages-from-training';
-import StageOverview from './stage-overview';
-import TrainingTimeline from './training-timeline';
-import ExcersiseInfo from './excersise-info';
-import getCurIndexFromSequence from '../timeline/get-cur-index-from-sequence';
+import getStagesFromTraining from '../logic/timeline/get-stages-from-training';
+import getCurIndexFromSequence from '../logic/timeline/get-cur-index-from-sequence';
 
 export default () => {
     const stages = getStagesFromTraining(sampleTrainingData);
@@ -27,27 +26,12 @@ export default () => {
     const curStage = stages[curStageIndex];
     const time = curTime - curStage.startTime;
 
-    /**
-     * 
-    
-     */
-
     return (
-        <div>
-             <Row>
-            <Col span={4}>
-                <TrainingTimeline 
-                stages={stages} 
-                curStageIndex={curStageIndex} 
-                />
-            </Col>
-            <Col span={20}>
-                <ExcersiseInfo 
-                    stage={curStage}
-                    time={time}
-                />
-            </Col>
-            </Row>
-      </div>
+        <Page size="medium" height="100vh">
+          <Exercise 
+              stage={curStage}
+              time={time}
+          />
+        </Page>
     );
 };

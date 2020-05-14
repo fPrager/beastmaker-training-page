@@ -1,7 +1,7 @@
+import { CSSBaseline, ZEITUIProvider } from '@zeit-ui/react'
 import Head from 'next/head'
 
-import '../css/antd.less';
-import '../css/app.css';
+import '../css/app.less';
 import App from '../components/app';
 
 
@@ -12,7 +12,10 @@ export default function Home() {
         <title>Beastmaker Training</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <App/>
+      <ZEITUIProvider>
+        <CSSBaseline />
+        <App/>
+      </ZEITUIProvider>
     </div>
   )
 }
